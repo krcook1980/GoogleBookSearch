@@ -1,0 +1,14 @@
+.jumbotron {
+    background-image: url(https://2l4as04d1l7f24h84bc8noc1-wpengine.netdna-ssl.com/wp-content/uploads/2020/02/open-books-and-coffee-cup.jpg);
+    background-size: cover;
+    height: 600px;
+    margin-top: -23%;
+}
+
+.container {
+    margin-top: 12%;
+    padding-top: 15%;
+    margin-left: 15%;
+    color: navy;
+    font-size: larger;
+}
