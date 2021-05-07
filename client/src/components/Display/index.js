@@ -1,31 +1,30 @@
 import React from "react";
-import { Books } from "../../../../models";
 import {Row, Col } from '../Grid';
 
 
-function Display(){
-   const books = useContext(BooksContext)
+function Display(book){
+  
  
     return(
         
             <Row>
                 <Col size="col-md=3">
-                    <img src={books.image} alt="..." />
+                    <img src={book.image} alt="..." />
                 </Col>
                 <  Col size="col-md-8">
                      <Row>
                         <Col size="col-md-12">
                             <div>
-                               <h1>Title:  {books.title}</h1>
+                               <h1>Title:  {book.title}</h1>
                             </div>
                             <div>
-                               <h3>Author: {books.author}</h3> 
+                               <h3>Author: {book.author}</h3> 
                             </div>
                             <div>
-                               <p>Description: {books.description}</p> 
+                               <p>Description: {book.description}</p> 
                             </div>
                             <div>
-                                <p>Link: <a href={books.link}>{books.link}</a></p>
+                                <p>Link: <a href={book.link}>{book.link}</a></p>
                             </div>
                         </Col>
                     </Row>
