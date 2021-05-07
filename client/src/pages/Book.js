@@ -1,8 +1,12 @@
 import React from 'react';
+import {Container} from '../components/Grid';
+import Display from '../components/Display';
 
-function Book(){
+function Book(books){
     return(
-        <div/>
+       <Container>
+           <Display books={books} />
+       </Container>
     )
 }
 
