@@ -1,60 +1,55 @@
-import React, { useState, useEffect } from 'react';
-import API from "../utils/API";
-import Search from '../components/Search';
-import Display from '../components/Display';
+import React, {useState, useEffect} from 'react';
 import {Container} from '../components/Grid';
-import { BooksContext } from '../utils/BooksContext';
+import Search from '../components/Search';
+import API from '../utils/API';
+import Display from '../components/Display';
+
 
 
 
 function Home() {
+    const [books, setBooks] = useState({
+        _id: 0,
+        title: "",
+        author: "",
+        description: "",
+        link: "",
+        image: "",
+        date: "",
+    });
 
-    const [books, dispatch] = useStoreContext([]);
-    const getSaved = () => {
-        dispatch({ type: LOADING});
-        dispatch({type: UPDATE_SAVED})
-    }
+    const [search, setSearch] = useState({title: ""});
+    const [error, setError] = useState("");
 
-    useEffect(() => {
-        showBooks()
-    }, []);
+    useEffect(()=>{
+        API.searchBooks({search})
+        .then(res => {
+            if (res.data.length === 0) {
+                throw new Error("No results found.");
+              }
+              if (res.data.status === "error") {
+                throw new Error(res.data.message);
+              }
+            console.log("in search books " + res)
+            setBooks(res)
+        })
+        .catch(err => {
+            setError(err.message)
+            console.log({error})
+        });
+    },[])    
 
-    function showBooks() {
-        API.getBooks()
-            .then(result => {
-                console.log("I am in home API" + result)
-                setBooks(result.data)
-                    .catch(err => console.log(err));
-            })
-    }
+   const handleSubmitButton = event => {
+    event.preventDefault();
+       setSearch(event.target.value)
+   }
 
-    function searchBooks() {
-        API.searchBooks()
-            .then(response => response.json())
-            .then(result => {
-                setBooks(result.data)
-                    .catch(err => console.log(err));
-            })
-    };
-
-    handleSubmit = event => {
-        const value = event.target.value;
-        
-        setFormInput(title={value})
-        searchBooks({title})
-    }
+   
 
     return (
         <Container>
-            <Search />
-
-            {books.map((book, index) => {
-                return (
-                    <Display book={book} key={index} />
-                )
-            })
-            }
-
+        <Search handleFormSubmit={handleSubmitButton}/>
+        <Display books={books}/>
         </Container>
 
     )

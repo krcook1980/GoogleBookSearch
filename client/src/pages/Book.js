@@ -1,11 +1,11 @@
 import React from 'react';
-import {Container} from '../components/Grid';
-import Display from '../components/Display';
+import {Container} from 'react-bootstrap';
+import SavedList from './SavedList';
 
-function Book(books){
+function Book(){
     return(
        <Container>
-           <Display books={books} />
+           <SavedList />
        </Container>
     )
 }

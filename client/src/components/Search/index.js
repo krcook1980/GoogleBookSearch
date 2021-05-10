@@ -1,23 +1,28 @@
 import React from 'react';
-import { Button, Form } from "react-bootstrap";
+
 
 import "./style.css";
 
-function Search() {
+function Search({handleFormSubmit, handleInputChange, search}) {
     return (
-        <Form>
-            <Form.Group controlId="formBasicEmail">
-                <Form.Label>Book Title</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
-                <Form.Text className="text-muted">
-                    Book Search
-            </Form.Text>
-            </Form.Group>
-
-            <Button variant="primary" type="submit">
-                Submit
-            </Button>
-        </Form>
+        <form className="search">
+            <div className="form-group">
+                <label htmlFor="language">Search Book:</label>
+                <input
+                    value={search}
+                    onChange={handleInputChange}
+                    name="term"
+                    list="term"
+                    type="text"
+                    className="form-control"
+                    placeholder="Type in a book to begin"
+                    id="term"
+                />
+                <button type="submit" onClick={handleFormSubmit} className="btn btn-success">
+                    Search
+                </button>
+            </div>
+        </form>
     )
 }
 
