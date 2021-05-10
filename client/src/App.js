@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route} from "react-router-dom";
 import Header from '../src/components/Header';
-import Practice from '../src/pages/Practice';
+import Home from '../src/pages/Home';
 
 
 
@@ -13,7 +13,7 @@ function App() {
         <div>
             
               <Header />
-              <Route exact path={"/"}><Practice /></Route>
+              <Route exact path={"/"}><Home /></Route>
              
        </div>
     </Router>

@@ -2,7 +2,7 @@ import React from "react";
 import {Row, Col } from '../Grid';
 
 
-function Display(book){
+function Display({book}){
   
  
     return(
@@ -11,7 +11,7 @@ function Display(book){
                 <Col size="col-md=3">
                     <img src={book.image} alt="..." />
                 </Col>
-                <  Col size="col-md-8">
+                <  Col size="col-md-9">
                      <Row>
                         <Col size="col-md-12">
                             <div>
@@ -23,9 +23,7 @@ function Display(book){
                             <div>
                                <p>Description: {book.description}</p> 
                             </div>
-                            <div>
-                                <p>Link: <a href={book.link}>{book.link}</a></p>
-                            </div>
+                            
                         </Col>
                     </Row>
                 </Col>
