@@ -3,13 +3,11 @@ const booksController = require("../../controllers/bookController");
 
 
 router.route('/')
-    .get(booksController.findAll)
-    .post(booksController.create);
+    .get(booksController.getBooks)
+    .post(booksController.saveBook);
 
 router
     .route('/:id')
-    .get(booksController.findById)
-    .put(booksController.update)
-    .delete(booksController.remove);
+    .delete(booksController.deleteBook);
 
 module.exports = router;

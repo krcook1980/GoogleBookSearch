@@ -1,9 +1,9 @@
 import React from 'react';
 
-function DeleteBtn(props) {
+function DeleteBtn({id, deletebook}) {
     return (
-      <span className="delete-btn" {...props} role="button" tabIndex="0">
-        ✗
+      <span className="delete-btn" role="button" tabIndex="0" onClick = {()=> deletebook(id)}>
+        ✗ Remove this book
       </span>
     );
   }

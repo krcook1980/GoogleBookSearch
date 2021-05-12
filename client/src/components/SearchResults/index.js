@@ -6,6 +6,7 @@ function SearchResults(book) {
    
         return (
             <Display book={book} />
+            
         )
    
 

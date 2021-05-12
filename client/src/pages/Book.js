@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container} from 'react-bootstrap';
-import SavedList from './SavedList';
+import SavedList from '../components/SavedList';
 
 function Book(){
     return(

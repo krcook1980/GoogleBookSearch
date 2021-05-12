@@ -11,7 +11,8 @@ function Header (){
           <p>
            Grab a drink, get cozy... Let's curl up with a good book!
           </p>
-          <a className="search" href="/">Search For Something New</a> <a className="saved" href="/Books">Saved For Me</a>
+          <a className="search" href="/">Search For Something New</a> 
+          <a className="saved" href="/books">Saved For Me</a>
 
         </Container>
       </Jumbotron>
