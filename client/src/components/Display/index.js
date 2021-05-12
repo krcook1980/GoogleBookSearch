@@ -22,7 +22,7 @@ function Display({book}){
                                <p>Description: {book.description}</p> 
                             </div>
                             <div>
-                                <p>Link: <a href={book.link} target="_blank" />{book.link}</p>
+                                <p>Link: <a href={book.link} target="_blank">See Book Here</a></p>
                             </div>
                            
                         </Col>

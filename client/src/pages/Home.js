@@ -44,8 +44,8 @@ function Home() {
     const newBook = {
       title: book.volumeInfo.title,
       author: book.volumeInfo.authors,
-      description: book.searchInfo.textSnippet,
-      image: book.volumeInfo.imageLinks.thumbnail,
+      description: book.searchInfo  === undefined ? "" :  book.searchInfo.textSnippet,
+      image: book.volumeInfo.imageLinks === undefined ? "https://www.collinsdictionary.com/images/thumb/book_181404689_250.jpg?version=4.0.151" : book.volumeInfo.imageLinks.thumbnail,
       link: book.volumeInfo.infoLink
     }
     API.saveBook(newBook)
@@ -64,8 +64,8 @@ function Home() {
           <SearchResults
             title={book.volumeInfo.title}
             author={book.volumeInfo.authors}
-            description={book.searchInfo.textSnippet}
-            image={book.volumeInfo.imageLinks.thumbnail}
+            description={book.searchInfo  === undefined ? "Unavailable" :  book.searchInfo.textSnippet}
+            image={book.volumeInfo.imageLinks === undefined ? "https://www.collinsdictionary.com/images/thumb/book_181404689_250.jpg?version=4.0.151" : book.volumeInfo.imageLinks.thumbnail}
             key={index}
             link={book.volumeInfo.infoLink}
           
