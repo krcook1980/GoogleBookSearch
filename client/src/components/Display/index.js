@@ -1,6 +1,7 @@
 import React from 'react';
 import "./style.css";
 
+//individual book info pushed to display on page
 function Display({book}){
   
      return(

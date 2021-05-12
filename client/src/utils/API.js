@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+//functions to send to express
 export default {
     getBooks: function(){
       return axios.get("/api/books");

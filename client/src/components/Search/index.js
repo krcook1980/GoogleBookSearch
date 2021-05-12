@@ -1,13 +1,12 @@
 import React from 'react';
-
-
 import "./style.css";
 
+// search button
 function Search({handleFormSubmit, handleInputChange, search}) {
     return (
         <form className="search">
             <div className="form-group">
-                <label htmlFor="language">Search Book:</label>
+                <label htmlFor="language">Search Book: </label>
                 <input
                     value={search}
                     onChange={handleInputChange}

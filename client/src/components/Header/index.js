@@ -2,7 +2,7 @@ import React from 'react';
 import { Jumbotron, Container } from "react-bootstrap";
 import "./style.css";
 
-
+//Header on both pages
 function Header (){
     return(
         <Jumbotron fluid>

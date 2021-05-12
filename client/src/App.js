@@ -4,6 +4,7 @@ import Header from '../src/components/Header';
 import Home from '../src/pages/Home';
 import Book from '../src/pages/Book';
 
+//routes on which page to display
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>

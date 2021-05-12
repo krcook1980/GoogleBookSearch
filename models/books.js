@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//database collection structure
+
 const booksSchema = new Schema({
      
     title: {

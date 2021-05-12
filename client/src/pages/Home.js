@@ -12,6 +12,7 @@ function Home() {
   const [books, setBooks] = useState([]);
   const [error, setError] = useState("");
 
+  //click to search google
   const handleFormSubmit = event => {
     event.preventDefault();
     if (!search) {
@@ -28,17 +29,18 @@ function Home() {
 
         setBooks(res.data.items)
         setError("")
-        console.log("books now ", res.data.items)
+        
       })
       .catch(err => setError(err.message));
   }
+
+  //set search query item for google api
   const handleInputChange = event => {
     console.log(event.target.value)
     setSearch(event.target.value);
-    console.log("I am updated ")
-
   };
 
+  //save the book to the database
   const handleSave = book => {
     console.log(book, "book save")
     const newBook = {
@@ -49,16 +51,18 @@ function Home() {
       link: book.volumeInfo.infoLink
     }
     API.saveBook(newBook)
-      .then(res => console.log(res, " successfully added"))
+      .then(res => alert("Successfully added!"))
   }
 
-
+ //What will display on Home page
   return (
     <Container mt-5>
       <h1 className="search">Book Search</h1>
       <Search
         handleFormSubmit={handleFormSubmit}
         handleInputChange={handleInputChange} results={search} />
+
+        {/*handle display of returned search items  */}
       {books.map((book, index) => (
         <>
           <SearchResults
@@ -70,7 +74,7 @@ function Home() {
             link={book.volumeInfo.infoLink}
 
           />
-
+      
           <Save book={book} handleSave={handleSave} key={index}/>
         </>
 

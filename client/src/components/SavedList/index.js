@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Display from '../Display';
 import API from '../../utils/API';
-import {Container} from '../Grid';
+import {Container} from 'reactstrap';
 import Delete from '../Delete';
 
+//return books from database
 const SavedBooks = () => {
     const [bookState, setBookState] = useState([]);
     const [error, setError] = useState("");
@@ -12,11 +13,12 @@ const SavedBooks = () => {
        getBooks()
     },[]);
 
+    // remove from database if desired
     const deletebook = id => {
         
         API.deleteBook(id)
         .then(res => {
-            console.log("book removed") 
+            alert("Book was removed") 
             getBooks()
         })
     };
@@ -25,13 +27,14 @@ const SavedBooks = () => {
         API.getBooks()
         .then(res => {
             setBookState(res.data);
-            console.log("I am in getbooks" + JSON.stringify(bookState))
         })
         .catch(err => setError(err));
     };
 
+    //what is displayed on the page
     return(
-        <Container>
+        <>
+            
            {bookState.length ? (
                <div>
             {bookState.map((book, index) => 
@@ -45,7 +48,7 @@ const SavedBooks = () => {
             <h3>You haven't added any saved books yet!</h3>
            )}
 
-        </Container>
+        </>
     )
 
 }

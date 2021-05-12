@@ -1,5 +1,6 @@
 const db = require("../models");
 
+//routes to talk to the database
 module.exports = {
     getBooks: function (req, res) { 
         db.Books.find()

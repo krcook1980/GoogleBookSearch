@@ -1,5 +1,4 @@
 import React from 'react';
-import Book from '../../pages/Book';
 
 function SaveBtn({book, handleSave}) {
     return (
