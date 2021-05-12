@@ -37,7 +37,7 @@ const SavedBooks = () => {
             {bookState.map((book, index) => 
                <>
                <Display book={book} key={index}/>
-                <Delete deletebook={deletebook} id={book._id}/>
+                <Delete deletebook={deletebook} id={book._id} />
                 </>
             )}
             </div>

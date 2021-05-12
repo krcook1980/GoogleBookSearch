@@ -15,10 +15,10 @@ function Search({handleFormSubmit, handleInputChange, search}) {
                     list="term"
                     type="text"
                     className="form-control"
-                    placeholder="Type in a book to begin"
+                    placeholder="Type in a book title to begin"
                     id="term"
                 />
-                <button type="submit" onClick={handleFormSubmit} className="btn btn-success">
+                <button type="submit" onClick={handleFormSubmit} className="btn">
                     Search
                 </button>
             </div>

@@ -3,8 +3,8 @@ import Book from '../../pages/Book';
 
 function SaveBtn({book, handleSave}) {
     return (
-      <span className="delete-btn" role="button" tabIndex="0" onClick={()=> handleSave(book)}>
-        Save This One
+      <span className="save-btn" role="button" tabIndex="0" onClick={()=> handleSave(book)}>
+        ✓ Save This One
       </span>
     );
   }
