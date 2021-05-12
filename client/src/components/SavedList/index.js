@@ -37,15 +37,15 @@ const SavedBooks = () => {
             
            {bookState.length ? (
                <div>
-            {bookState.map((book, index) => 
+            {bookState.map((book, index, i) => 
                <>
                <Display book={book} key={index}/>
-                <Delete deletebook={deletebook} id={book._id} />
+                <Delete deletebook={deletebook} id={book._id} key={i}/>
                 </>
             )}
             </div>
            ) : (
-            <h3>You haven't added any saved books yet!</h3>
+            <h3 className="card">You haven't added any saved books yet!</h3>
            )}
 
         </>

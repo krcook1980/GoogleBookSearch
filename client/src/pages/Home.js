@@ -56,7 +56,7 @@ function Home() {
 
  //What will display on Home page
   return (
-    <Container mt-5>
+    <Container >
       <h1 className="search">Book Search</h1>
       <Search
         handleFormSubmit={handleFormSubmit}
