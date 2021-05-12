@@ -41,5 +41,5 @@
 
    ## Screenshots
 
-  ![Screenshot](https://github.com/krcook1980/Jabs/blob/main/public/assets/scr1.JPG?raw=true)
+  ![Screenshot](https://github.com/krcook1980/GoogleBookSearch/blob/main/client/public/scr.JPG?raw=true)
 
